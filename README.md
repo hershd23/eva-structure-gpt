@@ -34,3 +34,24 @@ Query : The keyboard on my laptop is typing the wrong letters and it's driving m
 ```
 
 ## Setup and running the application
+Clone the project
+```
+git clone https://github.com/hershd23/eva-structure-gpt.git
+cd eva-structure-gpt
+```
+
+Create a new python environment in conda or venv, and activate that environement (Optional but recommended)
+```
+python3 -m venv /env
+source env/bin/activate
+```
+
+Install the dependencies
+```
+pip install -r requirements.txt
+```
+
+Simply run the main.py file and input the query, openai key and any additional inputs you want to add to the prompt
+```
+python3 main.py
+```
