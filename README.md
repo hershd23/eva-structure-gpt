@@ -55,3 +55,7 @@ Simply run the main.py file and input the query, openai key and any additional i
 ```
 python3 main.py
 ```
+
+## Future Work
+* Currently the prompt and and the structure are kind of static. Allow user to add their own structure and paradigm of data.
+* More experimentation required with the prompt
