@@ -33,6 +33,16 @@ Query : The keyboard on my laptop is typing the wrong letters and it's driving m
 }
 ```
 
+```
+✅ Answer:
+Query : My headphones won't connect to my phone anymore, even though they used to work just fine.
+{
+  "Issue Category": "hardware",
+  "Raw Issue String": "My headphones won't connect to my phone anymore, even though they used to work just fine.",
+  "Issue Component": "headphones"
+}
+```
+
 ## Setup and running the application
 Clone the project
 ```

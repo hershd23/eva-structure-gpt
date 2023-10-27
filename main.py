@@ -101,12 +101,6 @@ def generate_response(cursor, prompt):
     Returns
         str: response from llm.
     """
-    # generate summary
-    print(cursor.query("SELECT * FROM unstructuredtable;").df())
-
-    # return cursor.query(
-    #     "SELECT ChatGPT({}, text) FROM unstructuredtable;".format(prompt)
-    # )
 
     response = cursor.table("unstructuredtable").select(f"ChatGPT('{prompt}', text)").df()["chatgpt.response"][0]
     print(response)
@@ -133,17 +127,11 @@ if __name__ == "__main__":
             """CREATE TABLE IF NOT EXISTS unstructuredtable (text TEXT(150));"""
         ).execute()
         # TODO : Add back when lifting stuff from a file
-        # cursor.load(user_input["unstructured_file_path"], "unstructuredtable", "csv").execute()
-
-        print(user_input["unstructured_query"])
         cursor.query(
             """INSERT INTO unstructuredtable (text) VALUES ("{}");""".format(
                 user_input["unstructured_query"]
             )
         ).execute()
-
-        print(cursor.query("SHOW TABLES").df())
-        print(cursor.query("SELECT * FROM unstructuredtable;").df())
 
         # Add something about getting a file and read it
         print("===========================================")
